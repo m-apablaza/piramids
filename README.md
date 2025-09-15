@@ -23,16 +23,15 @@ The script included in this repository (`pyramid_chile.R`) performs the followin
 1. **Load and clean the data**: removes totals, handles missing values, and converts text into numeric variables.
 2. **Reshape the dataset**: makes it tidy and ready for visualization using `reshape2`.
 3. **Calculate youth share**: computes the percentage of the population between 15–29 years old by sex and year.
-4. **Create the pyramid plot** with `ggplot2`:
-   - Bars represent male (left) and female (right) population counts.
-   - Shaded area marks the 15–29 age range.
-   - Labels indicate the percentage that youth represents in each year.
-   - Three population pyramids are displayed side by side (2000, 2025, 2050).
+4. **Create the pyramid plot** with `ggplot2`.
 
 ---
 
 ## 📈 Example Output
-Running the script will produce a figure similar to this:
+
+After running the script, you will obtain a demographic pyramid similar to the following:
+
+![Chilean Demographic Pyramid](pyramid_chile.png)
 
 > **Title**: *Pirámide Poblacional de Chile (2000–2050)*  
 > **Subtitle**:  
@@ -40,11 +39,21 @@ Running the script will produce a figure similar to this:
 > In 2025, they are projected to represent **19.9%**.  
 > By 2050, the proportion is expected to fall to **15.9%**.
 
-The resulting plot visually illustrates the demographic transition of Chile, emphasizing the reduction in the share of youth over time.
-
 ---
 
 ## ▶️ How to Run
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/chile-demographic-pyramid.git
+
+```bash
+# 1. Clone this repository
+git clone https://github.com/yourusername/chile-demographic-pyramid.git
+
+# 2. Open the R script (pyramid_chile.R) in R or RStudio
+
+# 3. Install required packages if not already installed
+Rscript -e "install.packages(c('reshape2','ggplot2'))"
+
+# 4. Place the INE dataset in the same directory as the script:
+#    ine_estimaciones-y-proyecciones-de-población-1992-2050_base-2017_base-de-datos.csv
+
+# 5. Run the script to generate the figure
+Rscript pyramid_chile.R
